@@ -1,19 +1,14 @@
 export interface ExType {
+  name: string;
+  title: string;
+  target: string;
+  "muscles worked": string;
   bodyPart: string;
   equipment: string;
-  gifUrl: string;
   id: string;
-  name: string;
-  target: string;
   blog: string;
   images: string[];
+  gifUrl: string;
   videos: string[];
-  title: string;
-  description: string;
-  instruction: string;
-  variation: string;
-  "muscles worked": string;
-  "common mistakes": string;
-  "safety precautions": string;
   keywords: string[];
 }

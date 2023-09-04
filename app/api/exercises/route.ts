@@ -60,7 +60,6 @@ export async function GET(req: Request, res: Response) {
           regex.test(exercise.title) ||
           regex.test(exercise.name) ||
           regex.test(exercise.target) ||
-          regex.test(exercise.description) ||
           regex.test(exercise.blog) ||
           regex.test(JSON.stringify(exercise.keywords))
       );
