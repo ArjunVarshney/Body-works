@@ -12,7 +12,8 @@ interface ApiUrlProps {
   url: string;
   variant: "public" | "admin";
   description: string;
-  parameters: {
+  type?: "route" | "search-param";
+  parameters?: {
     name: string;
     type: string;
     default: number | string | undefined;
@@ -24,18 +25,19 @@ const ApiUrl: React.FC<ApiUrlProps> = ({
   url,
   variant,
   description,
-  parameters,
+  type = "route",
+  parameters = [],
 }) => {
   const origin = useOrigin();
   const [apiUrl, setUrl] = useState(url);
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState({});
 
   useEffect(() => {
     setUrl(origin + url);
   }, [origin]);
 
   return (
-    <div className="flex flex-col lg:flex-row w-full max-w-full mt-6 px-2 gap-6">
+    <div className="flex flex-col lg:flex-row w-full max-w-full my-6 pb-6 px-2 gap-6">
       <div className="w-full">
         <ApiBox
           title={title}
@@ -44,8 +46,20 @@ const ApiUrl: React.FC<ApiUrlProps> = ({
           description={MarkdownToHTML(description)}
           parameters={parameters}
           onParameterChange={(value: Record<string, any>) => {
-            const queryString = qs.stringify(value);
-            setUrl(url + "?" + queryString);
+            if (type === "search-param") {
+              const queryString = qs.stringify(value);
+              setUrl(origin + url + "?" + queryString);
+            } else if (parameters.length) {
+              if (value[parameters[0].name])
+                setUrl(
+                  origin +
+                    url.substring(0, url.indexOf("<")) +
+                    value[parameters[0].name]
+                );
+              else {
+                setUrl(origin + url);
+              }
+            }
           }}
         />
       </div>
@@ -58,10 +72,14 @@ const ApiUrl: React.FC<ApiUrlProps> = ({
               onRun={async () => {
                 try {
                   const response = await axios.get(apiUrl);
-                  setResponse(JSON.stringify(response.data));
+                  setResponse(response);
                   toast.success("Request successfull.");
-                } catch (error) {
-                  toast.error("Something went wrong.");
+                } catch (error: any) {
+                  setResponse({
+                    status: error.response.status,
+                    data: error.response.data,
+                  });
+                  toast.error("Request unsucessfull");
                 }
               }}
             />

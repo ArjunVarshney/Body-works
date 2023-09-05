@@ -12,7 +12,7 @@ const ResponseBox: React.FC<ResponseBoxProps> = ({ response }) => {
   return (
     <div
       className={cn(
-        "text-white w-full min-h-[175px] absolute top-12 bottom-0 overflow-auto bg-gray-950 rounded-lg p-3",
+        "text-white text-xs w-full min-h-[175px] absolute top-12 border bottom-0 overflow-auto bg-gray-950 rounded-lg p-3",
         response ? "" : "text-opacity-80",
         font.className
       )}

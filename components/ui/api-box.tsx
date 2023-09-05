@@ -78,9 +78,11 @@ const ApiBox: React.FC<ApiBoxProps> = ({
           <Copy className="h-4 w-4" size="icom" onClick={onCopy} />
         </Button>
       </AlertDescription>
-      <Accordion type="single" collapsible>
+      <Accordion type="single" collapsible className="pt-5">
         <AccordionItem value="item-1">
-          <AccordionTrigger>Details</AccordionTrigger>
+          <AccordionTrigger className="text-sm sm:text-lg">
+            Details
+          </AccordionTrigger>
           <AccordionContent>
             <div
               className="my-1.5 text-primary"
@@ -89,36 +91,48 @@ const ApiBox: React.FC<ApiBoxProps> = ({
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Play with SearchParameters</AccordionTrigger>
-          <AccordionContent>
-            <div className="grid w-full items-center gap-1.5 my-3">
-              {parameters.map((parameter) => (
-                <div key={parameter.name} className="flex items-center">
-                  <Label htmlFor={parameter.name} className="w-[20%]">
-                    {parameter.name}:
-                  </Label>
-                  <Input
-                    type={parameter.type}
-                    id={parameter.name}
-                    className="w-full"
-                    min={0}
-                    value={value[parameter.name]}
-                    onChange={(e) => {
-                      setValue((prev) => {
-                        const dPrev = { ...prev };
-                        dPrev[parameter.name] = e.target.value || undefined;
-                        return dPrev;
-                      });
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      {parameters.length === 0 ? (
+        <div className="pb-5" />
+      ) : (
+        <Accordion type="single" collapsible className="pb-5">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-sm sm:text-lg">
+              Change Params
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="grid w-full items-center gap-1.5 my-3">
+                {parameters.map((parameter) => (
+                  <div
+                    key={parameter.name}
+                    className="flex mr-4 flex-col sm:flex-row gap-y-2 items-center"
+                  >
+                    <Label
+                      htmlFor={parameter.name}
+                      className="w-full sm:w-[30%]"
+                    >
+                      {parameter.name}:
+                    </Label>
+                    <Input
+                      type={parameter.type}
+                      id={parameter.name}
+                      className="w-full"
+                      min={0}
+                      value={value[parameter.name]}
+                      onChange={(e) => {
+                        setValue((prev) => {
+                          const dPrev = { ...prev };
+                          dPrev[parameter.name] = e.target.value || undefined;
+                          return dPrev;
+                        });
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      )}
     </Alert>
   );
 };

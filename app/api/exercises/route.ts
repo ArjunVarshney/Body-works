@@ -9,7 +9,7 @@ export async function GET(req: Request, res: Response) {
   try {
     let searchedData: ExType[] = [...exData];
 
-    const { searchParams } = new URL(req.url);
+    const { searchParams, origin } = new URL(req.url);
     const page = parseInt(searchParams.get("page") || "0");
     const limit = parseInt(searchParams.get("limit") || "10");
     const search = searchParams.get("search");
@@ -65,7 +65,15 @@ export async function GET(req: Request, res: Response) {
       );
     }
 
-    const outputArray: ExType[] = searchedData.slice(start, end);
+    const outputArray: ExType[] = [
+      ...searchedData.slice(start, end).map((ex: ExType) => {
+        return {
+          ...ex,
+          images: [...ex.images.map((image) => origin + image)],
+          gifUrl: origin + ex.gifUrl,
+        };
+      }),
+    ];
 
     const response = {
       totalExercises: searchedData.length,
