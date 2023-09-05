@@ -1,9 +1,28 @@
-import { Dumbbell } from "lucide-react";
+"use client";
+
+import { Code2, Dumbbell } from "lucide-react";
 import Link from "next/link";
 import MainNav from "./main-nav";
 import { ModeToggle } from "./mode-toggle";
+import MobileNav from "./mobile-nav";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const routes = [
+    {
+      href: "/categories",
+      label: "Categories",
+      active: pathname === "/categories",
+    },
+    {
+      href: `/docs`,
+      label: "Docs",
+      active: pathname === `/docs`,
+    },
+  ];
+
   return (
     <div className="px-4 h-16 flex items-center border-b">
       <div className="flex items-center w-full">
@@ -17,10 +36,26 @@ const Navbar = () => {
             </div>
             BodyWorks
           </Link>
-          <MainNav />
+          <MainNav routes={routes} />
         </div>
-        <div className="space-x-6 ml-auto">
+        <div className="flex items-center space-x-4 ml-auto">
+          <Link
+            href="https://github.com/ArjunVarshney/Body-works"
+            className="p-2.5 rounded-lg hover:bg-gray-800 hidden sm:block"
+          >
+            <Code2 size={20} />
+          </Link>
           <ModeToggle />
+          <MobileNav
+            routes={[
+              ...routes,
+              {
+                href: "https://github.com/ArjunVarshney/Body-works",
+                label: "View on Github",
+                active: false,
+              },
+            ]}
+          />
         </div>
       </div>
     </div>
