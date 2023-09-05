@@ -17,6 +17,7 @@ interface ApiUrlProps {
     name: string;
     type: string;
     default: number | string | undefined;
+    placeholder: string;
   }[];
 }
 

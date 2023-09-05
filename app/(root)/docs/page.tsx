@@ -13,6 +13,7 @@ interface ApiUrlProps {
     name: string;
     type: string;
     default: number | string | undefined;
+    placeholder: string;
   }[];
 }
 
@@ -41,31 +42,37 @@ const exerciseUrls: ApiUrlProps[] = [
         name: "page",
         type: "number",
         default: 0,
+        placeholder: "eg. 0",
       },
       {
         name: "limit",
         type: "number",
         default: 10,
+        placeholder: "eg. 10",
       },
       {
         name: "equipment",
         type: "text",
         default: undefined,
+        placeholder: "eg. kettlebell",
       },
       {
         name: "bodypart",
         type: "text",
         default: undefined,
+        placeholder: "eg. waist",
       },
       {
         name: "targetmuscle",
         type: "text",
         default: undefined,
+        placeholder: "eg. abs",
       },
       {
         name: "search",
         type: "text",
         default: undefined,
+        placeholder: "eg. curl",
       },
     ],
   },
@@ -93,6 +100,7 @@ const exerciseUrls: ApiUrlProps[] = [
         name: "exerciseId",
         type: "number",
         default: undefined,
+        placeholder: "eg. 2567",
       },
     ],
   },

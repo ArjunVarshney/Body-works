@@ -25,6 +25,7 @@ interface ApiBoxProps {
     name: string;
     type: string;
     default: number | string | undefined;
+    placeholder: string;
   }[];
   onParameterChange: Function;
 }
@@ -116,6 +117,7 @@ const ApiBox: React.FC<ApiBoxProps> = ({
                       type={parameter.type}
                       id={parameter.name}
                       className="w-full"
+                      placeholder={parameter.placeholder}
                       min={0}
                       value={value[parameter.name]}
                       onChange={(e) => {
