@@ -143,6 +143,7 @@ const DocsPage = () => {
       />
       {exerciseUrls.map((api) => (
         <ApiUrl
+          key={api.url}
           title={api.title}
           variant={api.variant}
           url={api.url}
@@ -157,6 +158,7 @@ const DocsPage = () => {
       />
       {equipmentUrls.map((api) => (
         <ApiUrl
+          key={api.url}
           title={api.title}
           variant={api.variant}
           url={api.url}
@@ -171,6 +173,7 @@ const DocsPage = () => {
       />
       {targetmuscleUrls.map((api) => (
         <ApiUrl
+          key={api.url}
           title={api.title}
           variant={api.variant}
           url={api.url}
@@ -185,6 +188,7 @@ const DocsPage = () => {
       />
       {bodypartUrls.map((api) => (
         <ApiUrl
+          key={api.url}
           title={api.title}
           variant={api.variant}
           url={api.url}

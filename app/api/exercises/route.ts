@@ -2,7 +2,7 @@ import data from "@/data/ex-data.json";
 import { ExType } from "@/types";
 import { NextResponse } from "next/server";
 
-// @ts-expect-error
+// @ts-ignore
 const exData: ExType[] = data;
 
 export async function GET(req: Request, res: Response) {

@@ -34,7 +34,7 @@ const ApiUrl: React.FC<ApiUrlProps> = ({
 
   useEffect(() => {
     setUrl(origin + url);
-  }, [origin]);
+  }, [origin, url]);
 
   return (
     <div className="flex flex-col lg:flex-row w-full max-w-full my-6 pb-6 px-2 gap-6">
