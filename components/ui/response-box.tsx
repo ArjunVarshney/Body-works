@@ -1,12 +1,25 @@
+import JSONtoHTML from "@/actions/json-to-html";
+import { cn } from "@/lib/utils";
+import { Inter } from "next/font/google";
+
+const font = Inter({ subsets: ["latin"] });
+
 interface ResponseBoxProps {
-  response?: string;
+  response: string;
 }
 
 const ResponseBox: React.FC<ResponseBoxProps> = ({ response }) => {
   return (
-    <div className="h-full w-full min-h-[100px] lg:max-h-none max-h-[150px] overflow-y-auto border bg-gray-950 text-white rounded-lg px-2 py-1">
-      ResponseBox
-    </div>
+    <div
+      className={cn(
+        "text-white w-full min-h-[175px] absolute top-12 bottom-0 overflow-auto bg-gray-950 rounded-lg p-3",
+        response ? "" : "text-opacity-80",
+        font.className
+      )}
+      dangerouslySetInnerHTML={{
+        __html: JSONtoHTML(response) || "Click run to try...",
+      }}
+    ></div>
   );
 };
 

@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
-import qs from "query-string";
 import { Label } from "./label";
 
 interface ApiBoxProps {
@@ -27,6 +26,7 @@ interface ApiBoxProps {
     type: string;
     default: number | string | undefined;
   }[];
+  onParameterChange: Function;
 }
 
 const textMap: Record<ApiBoxProps["variant"], string> = {
@@ -45,6 +45,7 @@ const ApiBox: React.FC<ApiBoxProps> = ({
   description,
   variant = "public",
   parameters,
+  onParameterChange,
 }) => {
   let defaultValue = {};
   parameters.forEach((parameter) => {
@@ -52,11 +53,9 @@ const ApiBox: React.FC<ApiBoxProps> = ({
   });
 
   const [value, setValue] = useState(defaultValue);
-  const [queryString, setQueryString] = useState("");
 
   useEffect(() => {
-    const queryString = qs.stringify(value);
-    setQueryString(queryString);
+    onParameterChange(value);
   }, [value]);
 
   const onCopy = () => {
@@ -72,8 +71,8 @@ const ApiBox: React.FC<ApiBoxProps> = ({
         <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
       </AlertTitle>
       <AlertDescription className="mt-4 flex items-center justify-between">
-        <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
-          {url + "?" + queryString}
+        <code className="relative rounded bg-muted px-[0.3rem] w-full break-all word py-[0.2rem] mr-2 font-mono text-sm font-semibold">
+          {url}
         </code>
         <Button variant="outline">
           <Copy className="h-4 w-4" size="icom" onClick={onCopy} />
