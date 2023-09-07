@@ -45,7 +45,7 @@ const TestApi: React.FC<TextApiProps> = ({ onRun, response }) => {
         </div>
         <SubHeading title="Test Api" />
       </div>
-      <ResponseBox response={JSON.stringify(response.data)} />
+      <ResponseBox response={response.data} />
     </div>
   );
 };

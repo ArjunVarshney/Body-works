@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4 ml-auto">
           <Link
             href="https://github.com/ArjunVarshney/Body-works"
-            className="p-2.5 rounded-lg hover:bg-gray-800 hidden sm:block"
+            className="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hidden sm:block"
           >
             <Code2 size={20} />
           </Link>

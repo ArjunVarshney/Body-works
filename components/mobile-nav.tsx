@@ -46,6 +46,7 @@ const MobileNav = ({ routes }: MainNav) => {
             <Link
               key={route.href}
               href={route.href}
+              onClick={() => setOpen(false)}
               className={cn(
                 "text-3xl font-semibold w-full transition-colors p-4 rounded-lg hover:text-primary hover:bg-neutral-100 dark:hover:bg-gray-900",
                 route.active

@@ -1,14 +1,18 @@
-import JSONtoHTML from "@/actions/json-to-html";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
+import { jsontohtml } from "jsontohtml-render";
 
 const font = Inter({ subsets: ["latin"] });
 
 interface ResponseBoxProps {
-  response: string;
+  response: any;
 }
 
 const ResponseBox: React.FC<ResponseBoxProps> = ({ response }) => {
+  const jsontohtmlClose = (element: HTMLElement) => {
+    console.log(element);
+  };
+
   return (
     <div
       className={cn(
@@ -17,7 +21,13 @@ const ResponseBox: React.FC<ResponseBoxProps> = ({ response }) => {
         font.className
       )}
       dangerouslySetInnerHTML={{
-        __html: JSONtoHTML(response) || "Click run to try...",
+        __html: response
+          ? jsontohtml(response, {
+              space_from_left: "-5px",
+              line_numbers: { space_from_left: "20px" },
+              retractors: { show: false },
+            })
+          : "Click run to try...",
       }}
     ></div>
   );
