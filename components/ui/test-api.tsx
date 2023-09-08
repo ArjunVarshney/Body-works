@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 interface TextApiProps {
   response: any;
-  onRun: MouseEventHandler<HTMLButtonElement>;
+  onRun: Function;
 }
 
 const TestApi: React.FC<TextApiProps> = ({ onRun, response }) => {
@@ -20,9 +20,9 @@ const TestApi: React.FC<TextApiProps> = ({ onRun, response }) => {
         <div className="flex items-center">
           <Button
             disabled={loading}
-            onClick={(e) => {
+            onClick={async (e) => {
               setLoading(true);
-              onRun(e);
+              await onRun(e);
               setLoading(false);
             }}
             variant="destructive"

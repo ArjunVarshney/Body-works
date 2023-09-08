@@ -70,7 +70,7 @@ const ApiUrl: React.FC<ApiUrlProps> = ({
           <div className="w-full overflow-hidden flex flex-col gap-1">
             <TestApi
               response={response}
-              onRun={async () => {
+              onRun={async (): Promise<void> => {
                 try {
                   const response = await axios.get(apiUrl);
                   setResponse(response);
