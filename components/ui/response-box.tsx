@@ -23,9 +23,12 @@ const ResponseBox: React.FC<ResponseBoxProps> = ({ response }) => {
       dangerouslySetInnerHTML={{
         __html: response
           ? jsontohtml(response, {
-              space_from_left: "-5px",
+              colors: {
+                background: "transparent",
+              },
+              space_from_left: "50px",
               line_numbers: { space_from_left: "20px" },
-              retractors: { show: false },
+              retractors: { space_from_left: "30px" },
             })
           : "Click run to try...",
       }}
