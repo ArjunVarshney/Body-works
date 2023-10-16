@@ -11,7 +11,7 @@ const SecretPage = () => {
             >
                <Link
                   href={
-                     "https://drive.google.com/drive/folders/1g-wLd-33gdxIxVym4RSGMJLehmAldMuW?usp=drive_link"
+                     "https://drive.google.com/drive/folders/1sQWnV8eE8MTaYlfOGNLE_Y5fXjHHLIfA?usp=sharing"
                   }
                   target="_blank"
                   className="h-full w-full grid place-items-center"
