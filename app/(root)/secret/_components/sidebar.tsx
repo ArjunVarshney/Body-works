@@ -26,13 +26,14 @@ interface SidebarProps {
       }[];
    };
    name: string;
+   defaultOpen?: boolean;
 }
 
-const Sidebar = ({ data, name }: SidebarProps) => {
+const Sidebar = ({ data, name, defaultOpen = false }: SidebarProps) => {
    const router = useRouter();
 
    return (
-      <Sheet>
+      <Sheet defaultOpen={defaultOpen}>
          <SheetTrigger>
             <Menu className="h-full w-full p-6 dark:hover:bg-slate-800 hover:bg-slate-100 rounded-lg" />
          </SheetTrigger>
