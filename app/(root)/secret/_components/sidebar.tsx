@@ -48,7 +48,7 @@ const Sidebar = ({ data, name }: SidebarProps) => {
                         key={key}
                         className="border-none"
                      >
-                        <AccordionTrigger className="bg-slate-200 dark:bg-slate-800 dark:text-primary pl-4 py-4">
+                        <AccordionTrigger className="bg-slate-200 truncate text-xs md:text-sm dark:bg-slate-800 dark:text-primary pl-4 py-4">
                            {key}
                         </AccordionTrigger>
                         <AccordionContent className="mt-2">

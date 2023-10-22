@@ -23,7 +23,7 @@ const VidPage = () => {
          <div className="flex items-center justify-center">
             {/* @ts-ignore */}
             <Sidebar data={data[params.courseName]} name={params.courseName} />
-            <div className="text-2xl flex flex-1 font-bold p-4 rounded-lg uppercase bg-primary text-primary-foreground">
+            <div className="text-sm md:text-md lg:text-lg xl:text-xl flex flex-1 font-bold p-4 rounded-lg uppercase bg-primary text-primary-foreground">
                {video!.name}
             </div>
          </div>
