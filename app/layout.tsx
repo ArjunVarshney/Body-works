@@ -19,12 +19,14 @@ export default function RootLayout({
    children: React.ReactNode;
 }) {
    return (
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
          <body className={font.className} suppressHydrationWarning={true}>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                <ToastProvider />
                <NavBar />
-               {children}
+               <div className="p-6 max-w-3xl lg:max-w-6xl xl:max-w-7xl mx-auto">
+                  {children}
+               </div>
                <Footer />
             </ThemeProvider>
          </body>

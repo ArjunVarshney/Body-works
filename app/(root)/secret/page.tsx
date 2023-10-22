@@ -1,39 +1,26 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import data from "./course-data.json";
+import { useRouter } from "next/navigation";
 
 const SecretPage = () => {
+   const router = useRouter();
    return (
-      <div className="p-6 max-w-3xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-         <div className="flex justify-between space-x-5">
-            <Button
-               className="min-h-[80vh] w-full text-3xl border-8 border-primary"
-               variant={"outline"}
-            >
-               <Link
-                  href={
-                     "https://drive.google.com/drive/folders/1sQWnV8eE8MTaYlfOGNLE_Y5fXjHHLIfA?usp=sharing"
-                  }
-                  target="_blank"
-                  className="h-full w-full grid place-items-center"
-               >
-                  Tensorflow
-               </Link>
-            </Button>
-            <Button
-               className="min-h-[80vh] w-full text-3xl border-8 border-primary"
-               variant={"outline"}
-            >
-               <Link
-                  href={
-                     "https://drive.google.com/drive/folders/1M_7Z2wXyCdKfe5k_PgF9oACazyKbPdIn?usp=drive_link"
-                  }
-                  target="_blank"
-                  className="h-full w-full grid place-items-center"
-               >
-                  Pytorch
-               </Link>
-            </Button>
+      <div className="">
+         <div className="text-5xl flex font-bold p-4 rounded-lg mb-10 uppercase bg-primary text-primary-foreground">
+            Courses
          </div>
+         {Object.keys(data).map((course) => (
+            <Button
+               key={course}
+               variant={"outline"}
+               className="w-full flex justify-start capitalize text-lg mt-2"
+               onClick={() => router.push(`/secret/${course}`)}
+            >
+               {course}
+            </Button>
+         ))}
       </div>
    );
 };

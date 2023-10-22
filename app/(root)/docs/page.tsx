@@ -144,7 +144,7 @@ const bodypartUrls: ApiUrlProps[] = [
 
 const DocsPage = () => {
   return (
-    <div className="p-6 max-w-3xl lg:max-w-6xl xl:max-w-7xl mx-auto">
+    <div>
       <Heading
         title="Exercises"
         description="API calls for retrieving exercises from the database"
