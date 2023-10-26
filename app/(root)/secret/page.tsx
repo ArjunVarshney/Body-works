@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const SecretPage = () => {
    const router = useRouter();
    return (
-      <div className="">
+      <div>
          <div className="text-5xl flex font-bold p-4 rounded-lg mb-10 uppercase bg-primary text-primary-foreground">
             Courses
          </div>

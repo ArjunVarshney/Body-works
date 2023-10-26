@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+:root {
+   height: 100%;
+}
+
+.container {
+   @apply max-w-3xl lg:max-w-none xl:max-w-7xl mx-auto pt-6;
+}
+
 @layer base {
    :root {
       --background: 0 0% 100%;

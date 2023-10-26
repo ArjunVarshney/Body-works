@@ -4,25 +4,25 @@ import ApiUrl from "@/components/api-url";
 import Heading from "@/components/ui/heading";
 
 interface ApiUrlProps {
-  title: string;
-  url: string;
-  variant: "public" | "admin";
-  description: string;
-  type?: "route" | "search-param";
-  parameters?: {
-    name: string;
-    type: string;
-    default: number | string | undefined;
-    placeholder: string;
-  }[];
+   title: string;
+   url: string;
+   variant: "public" | "admin";
+   description: string;
+   type?: "route" | "search-param";
+   parameters?: {
+      name: string;
+      type: string;
+      default: number | string | undefined;
+      placeholder: string;
+   }[];
 }
 
 const exerciseUrls: ApiUrlProps[] = [
-  {
-    title: "GET",
-    variant: "public",
-    url: "/api/exercises",
-    description: `#Description\nMaking a **GET** request on this link will return an array of all the exercises which match the assigned filters.\n# SearchParams\n- **page**: For page number\n - **limit**: For number of exercises inside a page\n - **equipment**: For exercises  performed using a specific equipment, you can call the equipments api for all the equipments\n- **bodypart**: For execises performed with a specific bodypart, you can call the bodyparts api for all the bodyparts\n- **targetmuscle**: For exercises of a specific muscle, you can call the targetmuscles api for all the targetmuscles\n- **search**: For implementing search functionality in the app\n**Note**: Search will be done on the filtered exercises using the _equipment_, _bodypart_, _targetmuscle_\n#Response Type\n
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/exercises",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the exercises which match the assigned filters.\n# SearchParams\n- **page**: For page number\n - **limit**: For number of exercises inside a page\n - **equipment**: For exercises  performed using a specific equipment, you can call the equipments api for all the equipments\n- **bodypart**: For execises performed with a specific bodypart, you can call the bodyparts api for all the bodyparts\n- **targetmuscle**: For exercises of a specific muscle, you can call the targetmuscles api for all the targetmuscles\n- **search**: For implementing search functionality in the app\n**Note**: Search will be done on the filtered exercises using the _equipment_, _bodypart_, _targetmuscle_\n#Response Type\n
     **Array of objects** containing the following entries:
     - **name**: string;
     - **title**: string;
@@ -36,51 +36,51 @@ const exerciseUrls: ApiUrlProps[] = [
     - **gifUrl**: string;
     - **videos**: string[];
     - **keywords**: string[];`,
-    type: "search-param",
-    parameters: [
-      {
-        name: "page",
-        type: "number",
-        default: 0,
-        placeholder: "eg. 0",
-      },
-      {
-        name: "limit",
-        type: "number",
-        default: 10,
-        placeholder: "eg. 10",
-      },
-      {
-        name: "equipment",
-        type: "text",
-        default: undefined,
-        placeholder: "eg. kettlebell",
-      },
-      {
-        name: "bodypart",
-        type: "text",
-        default: undefined,
-        placeholder: "eg. waist",
-      },
-      {
-        name: "targetmuscle",
-        type: "text",
-        default: undefined,
-        placeholder: "eg. abs",
-      },
-      {
-        name: "search",
-        type: "text",
-        default: undefined,
-        placeholder: "eg. curl",
-      },
-    ],
-  },
-  {
-    title: "GET",
-    variant: "public",
-    url: "/api/exercises/<exerciseId>",
-    description: `#Description\nMaking a **GET** request on this link will return an exercise which corresponds to the id.\n# Params\n- **exerciseId**: For a specific exercise with this id\n#Response Type\n
+      type: "search-param",
+      parameters: [
+         {
+            name: "page",
+            type: "number",
+            default: 0,
+            placeholder: "eg. 0",
+         },
+         {
+            name: "limit",
+            type: "number",
+            default: 10,
+            placeholder: "eg. 10",
+         },
+         {
+            name: "equipment",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. kettlebell",
+         },
+         {
+            name: "bodypart",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. waist",
+         },
+         {
+            name: "targetmuscle",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. abs",
+         },
+         {
+            name: "search",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. curl",
+         },
+      ],
+   },
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/exercises/<exerciseId>",
+      description: `#Description\nMaking a **GET** request on this link will return an exercise which corresponds to the id.\n# Params\n- **exerciseId**: For a specific exercise with this id\n#Response Type\n
     **Object** containing the following entries:
     - **name**: string;
     - **title**: string;
@@ -94,119 +94,119 @@ const exerciseUrls: ApiUrlProps[] = [
     - **gifUrl**: string;
     - **videos**: string[];
     - **keywords**: string[];`,
-    type: "route",
-    parameters: [
-      {
-        name: "exerciseId",
-        type: "number",
-        default: undefined,
-        placeholder: "eg. 2567",
-      },
-    ],
-  },
+      type: "route",
+      parameters: [
+         {
+            name: "exerciseId",
+            type: "number",
+            default: undefined,
+            placeholder: "eg. 2567",
+         },
+      ],
+   },
 ];
 
 const equipmentUrls: ApiUrlProps[] = [
-  {
-    title: "GET",
-    variant: "public",
-    url: "/api/equipments",
-    description: `#Description\nMaking a **GET** request on this link will return an array of all the equipments that may be used to filter the data from the exercise api.\n#Response Type\n
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/equipments",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the equipments that may be used to filter the data from the exercise api.\n#Response Type\n
     **Array of objects** containing the following entries:
     - **exerciseCount**: number
     - **equipment**: string`,
-  },
+   },
 ];
 
 const targetmuscleUrls: ApiUrlProps[] = [
-  {
-    title: "GET",
-    variant: "public",
-    url: "/api/targetmuscles",
-    description: `#Description\nMaking a **GET** request on this link will return an array of all the target muscles that may be used to filter the data from the exercise api.\n#Response Type\n
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/targetmuscles",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the target muscles that may be used to filter the data from the exercise api.\n#Response Type\n
     **Array of objects** containing the following entries:
     - **exerciseCount**: number
     - **targetMuscle**: string`,
-  },
+   },
 ];
 
 const bodypartUrls: ApiUrlProps[] = [
-  {
-    title: "GET",
-    variant: "public",
-    url: "/api/bodyparts",
-    description: `#Description\nMaking a **GET** request on this link will return an array of all the body parts that may be used to filter the data from the exercise api.\n#Response Type\n
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/bodyparts",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the body parts that may be used to filter the data from the exercise api.\n#Response Type\n
     **Array of objects** containing the following entries:
     - **exerciseCount**: number
     - **bodyPart**: string`,
-  },
+   },
 ];
 
 const DocsPage = () => {
-  return (
-    <div>
-      <Heading
-        title="Exercises"
-        description="API calls for retrieving exercises from the database"
-      />
-      {exerciseUrls.map((api) => (
-        <ApiUrl
-          key={api.url}
-          title={api.title}
-          variant={api.variant}
-          url={api.url}
-          description={api.description}
-          type={api.type}
-          parameters={api.parameters}
-        />
-      ))}
-      <Heading
-        title="Equipments"
-        description="API calls for retrieving the list of equipments from the database"
-      />
-      {equipmentUrls.map((api) => (
-        <ApiUrl
-          key={api.url}
-          title={api.title}
-          variant={api.variant}
-          url={api.url}
-          description={api.description}
-          type={api.type}
-          parameters={api.parameters}
-        />
-      ))}
-      <Heading
-        title="Target muscles"
-        description="API calls for retrieving the list of targetmuscles from the database"
-      />
-      {targetmuscleUrls.map((api) => (
-        <ApiUrl
-          key={api.url}
-          title={api.title}
-          variant={api.variant}
-          url={api.url}
-          description={api.description}
-          type={api.type}
-          parameters={api.parameters}
-        />
-      ))}
-      <Heading
-        title="Body Parts"
-        description="API calls for retrieving the list of targetmuscles from the database"
-      />
-      {bodypartUrls.map((api) => (
-        <ApiUrl
-          key={api.url}
-          title={api.title}
-          variant={api.variant}
-          url={api.url}
-          description={api.description}
-          type={api.type}
-          parameters={api.parameters}
-        />
-      ))}
-    </div>
-  );
+   return (
+      <div className="container">
+         <Heading
+            title="Exercises"
+            description="API calls for retrieving exercises from the database"
+         />
+         {exerciseUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+         <Heading
+            title="Equipments"
+            description="API calls for retrieving the list of equipments from the database"
+         />
+         {equipmentUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+         <Heading
+            title="Target muscles"
+            description="API calls for retrieving the list of targetmuscles from the database"
+         />
+         {targetmuscleUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+         <Heading
+            title="Body Parts"
+            description="API calls for retrieving the list of targetmuscles from the database"
+         />
+         {bodypartUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+      </div>
+   );
 };
 
 export default DocsPage;

@@ -24,8 +24,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="px-4 h-16 flex items-center border-b">
-      <div className="flex items-center w-full">
+    <div className="px-4 py-2 h-16 flex items-center border-b z-50 bg-background">
+      <div className="flex items-center w-full animate-enter-top">
         <div className="flex gap-x-6">
           <Link
             href={"/"}

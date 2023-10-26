@@ -21,13 +21,15 @@ export default function RootLayout({
    return (
       <html lang="en" suppressHydrationWarning>
          <body className={font.className} suppressHydrationWarning={true}>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
                <ToastProvider />
-               <NavBar />
-               <div className="p-6 max-w-3xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-                  {children}
+               <div className="flex flex-col min-h-screen h-full w-full">
+                  <NavBar />
+                  <div className="p-6 pt-0 h-full w-full">
+                     {children}
+                  </div>
+                  <Footer />
                </div>
-               <Footer />
             </ThemeProvider>
          </body>
       </html>
