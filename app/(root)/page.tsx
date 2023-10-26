@@ -13,9 +13,9 @@ const HomePage = () => {
                   Body <br /> Works
                </span>
                <span className="animate-enter text-3xl xl:max-w-xs xl:text-2xl 2xl:max-w-md 2xl:text-3xl max-w-lg mt-4 delay-700 italic font-semibold ">
-                  "Not everyone can wake up every day feeling energized and
-                  motivated to put in the hard work that it takes to stay fit."
-                  -{" "}
+                  &quot;Not everyone can wake up every day feeling energized and
+                  motivated to put in the hard work that it takes to stay
+                  fit.&quot; -{" "}
                   <span className="not-italic font-normal">Arjun Varshney</span>
                </span>
             </div>
