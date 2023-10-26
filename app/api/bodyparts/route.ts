@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, res: Response) {
    try {
-      const { origin } = new URL(req.url);
+      const origin = "https://body-works.vercel.app";
       const response = {
          numberOfBodyParts: data.length,
          data: [
