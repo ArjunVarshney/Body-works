@@ -23,9 +23,9 @@ export default function RootLayout({
          <body className={font.className} suppressHydrationWarning={true}>
             <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
                <ToastProvider />
-               <div className="flex flex-col min-h-screen h-full w-full">
+               <div className="flex flex-col min-h-full w-full">
                   <NavBar />
-                  <div className="p-6 pt-0 h-full w-full">
+                  <div className="p-0 h-full w-full">
                      {children}
                   </div>
                   <Footer />

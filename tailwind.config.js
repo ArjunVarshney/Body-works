@@ -84,8 +84,8 @@ module.exports = {
                to: { width: "100%" },
             },
             enter: {
-               "0%": { color: "transparent", marginLeft: "-10%" },
-               "100%": { color: "var(--primary)", marginLeft: "0" },
+               "0%": { opacity: "0", marginLeft: "-10%" },
+               "100%": { opacity: "1", marginLeft: "0" },
             },
          },
          animation: {
