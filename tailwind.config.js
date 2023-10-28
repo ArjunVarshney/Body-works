@@ -50,6 +50,7 @@ module.exports = {
                DEFAULT: "hsl(var(--card))",
                foreground: "hsl(var(--card-foreground))",
             },
+            "light-blue": "hsl(var(--blue))",
             keyframes: {
                "accordion-down": {
                   from: { height: 0 },
@@ -87,12 +88,17 @@ module.exports = {
                "0%": { opacity: "0", marginLeft: "-10%" },
                "100%": { opacity: "1", marginLeft: "0" },
             },
+            "pop-in": {
+               from: { opacity: "0", marginTop: "10%" },
+               to: { opacity: "1", marginTop: "0" },
+            },
          },
          animation: {
             "accordion-down": "accordion-down 0.2s ease-out",
             "accordion-up": "accordion-up 0.2s ease-out",
             expand: "expand 0.5s ease-out",
             enter: "enter 0.7s linear",
+            "pop-in": "pop-in 0.5s ease-out",
          },
          boxShadow: {
             left: "-10px 0px 10px 0px hsl(var(--background))",

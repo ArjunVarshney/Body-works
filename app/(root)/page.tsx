@@ -1,6 +1,8 @@
 import Exercises from "@/components/exercise/exercises";
 import { Button } from "@/components/ui/button";
+import Heading from "@/components/ui/heading";
 import SectionHeading from "@/components/ui/section-heading";
+import SectionSubHeading from "@/components/ui/section-sub-heading";
 import { ArrowDownCircleIcon, Dumbbell } from "lucide-react";
 
 const HomePage = () => {
@@ -11,7 +13,7 @@ const HomePage = () => {
                <div className="bg-black dark:bg-white w-fit h-fit p-2 rounded-lg mb-2 opacity-0 animate-enter fill-mode-forwards delay-300">
                   <Dumbbell size={50} className="text-white dark:text-black" />
                </div>
-               <span className="text-[rgb(0,185,239)] opacity-0 animate-enter fill-mode-forwards delay-500 text-7xl sm:text-9xl xl:text-8xl font-bold font-mono ">
+               <span className="text-light-blue opacity-0 animate-enter fill-mode-forwards delay-500 text-7xl sm:text-9xl xl:text-8xl font-bold font-mono ">
                   Body <br /> Works
                </span>
                <span className="opacity-0 text-3xl animate-enter fill-mode-forwards lg:max-w-[400px] xl:max-w-xs xl:text-2xl 2xl:max-w-sm max-w-lg mt-4 delay-700 italic font-semibold">
@@ -41,7 +43,8 @@ const HomePage = () => {
          </div>
          <div className="xl:border-t container">
             <SectionHeading title="Popular Exercises" />
-            <Exercises />
+            <SectionSubHeading title="Abdominals"/>
+            <Exercises limit={3}/>
          </div>
       </>
    );
