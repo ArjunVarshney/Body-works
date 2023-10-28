@@ -8,6 +8,12 @@ const nextConfig = {
             port: "3000",
             pathname: "/**",
          },
+         {
+            protocol: "https",
+            hostname: "body-works.vercel.app",
+            port: "",
+            pathname: "/**",
+         },
       ],
    },
    async headers() {

@@ -1,10 +1,8 @@
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import {
    Card,
    CardContent,
    CardDescription,
-   CardFooter,
    CardHeader,
    CardTitle,
 } from "@/components/ui/card";
@@ -12,7 +10,7 @@ import { ExType } from "@/types";
 
 const ExerciseCard = ({ ex }: { ex: ExType }) => {
    return (
-      <Card className="group hover:scale-[102%] transition animate-pop-in">
+      <Card className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in">
          <CardHeader>
             <CardTitle className="font-extrabold mb-2 text-light-blue text-3xl">
                {ex.title}
@@ -24,12 +22,10 @@ const ExerciseCard = ({ ex }: { ex: ExType }) => {
             </CardDescription>
          </CardHeader>
          <CardContent>
-            <Image
-               width={50}
-               height={50}
+            <img
                src={ex.gifUrl}
                alt="exercise image"
-               className="w-full max-h-[300px] object-cover rounded-lg mb-3 group-hover:mb-5 group-hover:scale-[107%] transition"
+               className="w-full max-h-[300px] object-cover rounded-lg mb-3 transition border dark:border-none group-hover:scale-[107%] group-hover:shadow group-active:scale-100"
             />
          </CardContent>
       </Card>
