@@ -9,7 +9,7 @@ body,
 }
 
 .container {
-   @apply max-w-3xl lg:max-w-none xl:max-w-7xl mx-auto p-4 pt-6;
+   @apply max-w-3xl lg:max-w-none xl:max-w-[1400px] mx-auto p-4 pt-6;
 }
 
 @layer base {
