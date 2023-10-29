@@ -12,7 +12,7 @@ const EquipmentCard = ({
 }) => {
    return (
       <Card className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in">
-         <CardHeader className="!pt-1.5 !pb-1 md:p-3">
+         <CardHeader className="px-1.5 !pt-1.5 !pb-1 md:p-3">
             <CardTitle className="font-extrabold text-light-blue text-sm md:text-lg capitalize w-full truncate">
                {target.equipment}
             </CardTitle>

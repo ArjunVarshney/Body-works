@@ -10,7 +10,14 @@ import { Input } from "@/components/ui/input";
 import SectionHeading from "@/components/ui/section-heading";
 import SectionSubHeading from "@/components/ui/section-sub-heading";
 import { useRequest } from "@/hooks/use-request";
-import { ArrowDownCircleIcon, Dumbbell, Loader2, Search } from "lucide-react";
+import {
+   ArrowDownCircleIcon,
+   ArrowRight,
+   ArrowRightCircle,
+   Dumbbell,
+   Loader2,
+   Search,
+} from "lucide-react";
 import { Fragment } from "react";
 
 const HomePage = () => {
@@ -50,7 +57,18 @@ const HomePage = () => {
                </div>
             </div>
          </div>
-         <div className="xl:border-t container">
+         <div className="xl:border-t bg-primary-foreground">
+            <div className="container !py-10 w-full flex items-center justify-center">
+               <Button
+                  size={"lg"}
+                  className="font-bold text-sm sm:text-xl md:text-3xl py-6 sm:py-10 pr-16 md:pr-20 flex gap-3 relative animate-pop-in hover:scale-95 active:scale-100 transition"
+               >
+                  Plan Your Workout
+                  <ArrowRightCircle className="animate-pulse-right absolute right-7 md:h-8 md:w-8" />
+               </Button>
+            </div>
+         </div>
+         <div className="container">
             <SectionHeading title="Search For Exercises" />
             <form className="p-2 md:p-4 flex items-center gap-2 border shadow-sm rounded-lg bg-muted">
                <Input
@@ -67,22 +85,25 @@ const HomePage = () => {
                   title="Body Parts"
                   description="Filter on the basis of body parts"
                />
-               <BodyParts />
+               <BodyParts n={5} viewMoreBtn={true} />
             </div>
             <div className="container !py-0">
                <Heading
                   title="Target Muscles"
                   description="Filter on the basis of target muscles"
                />
-               <TargetMuscles />
+               <TargetMuscles n={5} viewMoreBtn={true} />
             </div>
             <div className="container !py-0">
                <Heading
                   title="Equipments"
                   description="Filter on the basis of equipments"
                />
-               <Equipments />
+               <Equipments n={5} viewMoreBtn={true} />
             </div>
+         </div>
+         <div className="container">
+            <SectionHeading title="Popular Workout Routines" />
          </div>
          <div className="container">
             <SectionHeading title="Popular Exercises" />

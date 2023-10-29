@@ -92,6 +92,17 @@ module.exports = {
                from: { opacity: "0", marginTop: "10%" },
                to: { opacity: "1", marginTop: "0" },
             },
+            "pulse-right": {
+               "0%": {
+                  marginRight: "0",
+               },
+               "50%": {
+                  marginRight: "5px",
+               },
+               "100%": {
+                  marginRight: "0",
+               },
+            },
          },
          animation: {
             "accordion-down": "accordion-down 0.2s ease-out",
@@ -99,6 +110,7 @@ module.exports = {
             expand: "expand 0.5s ease-out",
             enter: "enter 0.7s linear",
             "pop-in": "pop-in 0.5s ease-out",
+            "pulse-right": "pulse-right 0.5s ease infinite",
          },
          boxShadow: {
             left: "-10px 0px 10px 0px hsl(var(--background))",

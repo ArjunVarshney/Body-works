@@ -51,10 +51,10 @@ const Navbar = () => {
    }, [lastScrollY, controlNavbar]);
 
    return (
-      <div
+      <nav
          className={cn(
-            "flex items-center border-b z-50 bg-background overflow-hidden transition-all fixed w-full px-4",
-            show ? "py-2 h-16" : "h-0 py-0"
+            "flex items-center border-b z-50 bg-background transition-all fixed w-full px-4",
+            show ? "py-2 h-16" : "h-0 py-0 overflow-hidden"
          )}
       >
          <div className="flex items-center w-full animate-enter-top">
@@ -93,7 +93,7 @@ const Navbar = () => {
                />
             </div>
          </div>
-      </div>
+      </nav>
    );
 };
 
