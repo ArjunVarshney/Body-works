@@ -7,6 +7,7 @@ import {
    CardTitle,
 } from "@/components/ui/card";
 import { ExType } from "@/types";
+import Image from "next/image";
 
 const ExerciseCard = ({ ex }: { ex: ExType }) => {
    return (
@@ -22,10 +23,13 @@ const ExerciseCard = ({ ex }: { ex: ExType }) => {
             </CardDescription>
          </CardHeader>
          <CardContent>
-            <img
+            <Image
+               height={70}
+               width={70}
                src={ex.gifUrl}
                alt="exercise image"
-               className="w-full max-h-[300px] object-cover rounded-lg mb-3 transition border dark:border-none group-hover:scale-[107%] group-hover:shadow group-active:scale-100"
+               className="w-full max-h-[300px] object-cover rounded-lg mb-3 transition border dark:border-none group-hover:scale-[107%] group-hover:shadow group-active:scale-100 bg-white"
+               loading="lazy"
             />
          </CardContent>
       </Card>

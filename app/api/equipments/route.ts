@@ -3,13 +3,15 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, res: Response) {
    try {
-      const origin = "https://body-works.vercel.app";
+      const { origin } = new URL(req.url);
       const response = {
          numberOfEquipments: data.length,
          data: [
             ...data.map((equipment) => {
-               equipment.imageUrl = origin + equipment.imageUrl;
-               return equipment;
+               return {
+                  ...equipment,
+                  imageUrl: origin + equipment.imageUrl,
+               };
             }),
          ],
       };

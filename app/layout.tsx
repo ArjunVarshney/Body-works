@@ -25,7 +25,7 @@ export default function RootLayout({
                <ToastProvider />
                <div className="flex flex-col min-h-full w-full">
                   <NavBar />
-                  <div className="p-0 h-full w-full">
+                  <div className="p-0 mt-16 h-full w-full overflow-hidden">
                      {children}
                   </div>
                   <Footer />

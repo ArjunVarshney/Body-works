@@ -57,7 +57,7 @@ const ApiBox: React.FC<ApiBoxProps> = ({
 
   useEffect(() => {
     onParameterChange(value);
-  }, [value]);
+  }, [value, onParameterChange]);
 
   const onCopy = () => {
     navigator.clipboard.writeText(url);
