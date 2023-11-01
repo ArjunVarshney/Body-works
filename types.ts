@@ -29,3 +29,9 @@ export interface EquipmentType {
    equipment: string;
    exerciseCount: number;
 }
+
+export interface RoutineCategoryType {
+   imageUrl: string;
+   title: string;
+   routineCount: number;
+}

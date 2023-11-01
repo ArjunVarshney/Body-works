@@ -142,6 +142,18 @@ const bodypartUrls: ApiUrlProps[] = [
    },
 ];
 
+const routineCategoryUrls: ApiUrlProps[] = [
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/routine/category",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the routine categories that may be used to filter the data from the routines api.\n#Response Type\n
+    **Array of objects** containing the following entries:
+    - **title**: string
+    - **imageUrl**: string`,
+   },
+];
+
 const DocsPage = () => {
    return (
       <div className="container">
@@ -195,6 +207,21 @@ const DocsPage = () => {
             description="API calls for retrieving the list of targetmuscles from the database"
          />
          {bodypartUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+         <Heading
+            title="Routine-Categories"
+            description="API calls for retrieving the list of routine-categories from the database"
+         />
+         {routineCategoryUrls.map((api) => (
             <ApiUrl
                key={api.url}
                title={api.title}

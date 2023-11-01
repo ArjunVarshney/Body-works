@@ -4,6 +4,7 @@ import BodyParts from "@/components/exercise/body-parts";
 import Equipments from "@/components/exercise/equipments";
 import Exercises from "@/components/exercise/exercises";
 import TargetMuscles from "@/components/exercise/target-muscles";
+import RoutineCategories from "@/components/routines/routine-categories";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
@@ -12,7 +13,6 @@ import SectionSubHeading from "@/components/ui/section-sub-heading";
 import { useRequest } from "@/hooks/use-request";
 import {
    ArrowDownCircleIcon,
-   ArrowRight,
    ArrowRightCircle,
    Dumbbell,
    Loader2,
@@ -103,7 +103,23 @@ const HomePage = () => {
             </div>
          </div>
          <div className="container">
-            <SectionHeading title="Popular Workout Routines" />
+            <SectionHeading title="500+ Workout routines" />
+            <div className="container !pt-0">
+               <Heading
+                  title="Routine Categories"
+                  description="Filter on the basis of various categories"
+               />
+               <RoutineCategories n={8} viewMoreBtn={true} />
+            </div>
+            <div className="container !py-10 mt-10 w-full flex items-center justify-center bg-primary-foreground rounded border shadow">
+               <Button
+                  size={"lg"}
+                  className="font-bold text-sm sm:text-xl md:text-3xl py-6 sm:py-10 pr-16 md:pr-20 flex gap-3 relative animate-pop-in hover:scale-95 active:scale-100 transition"
+               >
+                  OR Create Your Own
+                  <ArrowRightCircle className="animate-pulse-right absolute right-7 md:h-8 md:w-8" />
+               </Button>
+            </div>
          </div>
          <div className="container">
             <SectionHeading title="Popular Exercises" />
