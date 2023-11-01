@@ -35,3 +35,18 @@ export interface RoutineCategoryType {
    title: string;
    routineCount: number;
 }
+
+export interface RoutineType {
+   category: string;
+   id: number;
+   routine: {
+      routine_title: string;
+      routine_description: string;
+      routine_imageUrl: string;
+      workout_summary: object;
+      workout_plan: {
+         heading: string | null;
+         day_plan: string;
+      }[];
+   };
+}

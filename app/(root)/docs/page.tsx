@@ -142,6 +142,91 @@ const bodypartUrls: ApiUrlProps[] = [
    },
 ];
 
+const routineUrls: ApiUrlProps[] = [
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/routine",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the routines which match the assigned filters.\n# SearchParams\n- **page**: For page number\n - **limit**: For number of workout routines inside a page\n - **equipment**: For workout routines  performed using a specific equipment\n- **category**: For workout routines in a category, you can call the categories api for all the bodyparts\n- **gender**: For workout routines of a specific gender\n
+      - **duration**: For workout routines with specific duration (eg:- 4 weeks)
+      - **level**: For workout routines for people of different levels (eg:- beginner, intermediate)
+      - **days_per_week** - For workout routines with specific days per week
+      - **search**: For implementing search functionality in the app.`,
+      type: "search-param",
+      parameters: [
+         {
+            name: "page",
+            type: "number",
+            default: 0,
+            placeholder: "eg. 0",
+         },
+         {
+            name: "limit",
+            type: "number",
+            default: 10,
+            placeholder: "eg. 10",
+         },
+         {
+            name: "equipment",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. kettlebell",
+         },
+         {
+            name: "bodypart",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. waist",
+         },
+         {
+            name: "gender",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. male",
+         },
+         {
+            name: "duration",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. 4 weeks",
+         },
+         {
+            name: "level",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. beginner",
+         },
+         {
+            name: "day_per_week",
+            type: "number",
+            default: undefined,
+            placeholder: "eg. 4",
+         },
+         {
+            name: "search",
+            type: "text",
+            default: undefined,
+            placeholder: "",
+         },
+      ],
+   },
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/routine/<routineId>",
+      description: `#Description\nMaking a **GET** request on this link will return an exercise which corresponds to the id.\n# Params\n- **routineId**: For a specific exercise with this`,
+      type: "route",
+      parameters: [
+         {
+            name: "routineId",
+            type: "number",
+            default: undefined,
+            placeholder: "eg. 46",
+         },
+      ],
+   },
+];
+
 const routineCategoryUrls: ApiUrlProps[] = [
    {
       title: "GET",
@@ -207,6 +292,21 @@ const DocsPage = () => {
             description="API calls for retrieving the list of targetmuscles from the database"
          />
          {bodypartUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+         <Heading
+            title="Routines"
+            description="API calls for retrieving the list of all Routines from the database"
+         />
+         {routineUrls.map((api) => (
             <ApiUrl
                key={api.url}
                title={api.title}
