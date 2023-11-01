@@ -27,7 +27,7 @@ export async function GET(req: Request, res: Response) {
          const regex = new RegExp(category.replace(" ", ""), "i");
 
          searchedData = searchedData.filter((workout) =>
-            regex.test(workout.category.replace(" ", ""))
+            regex.test(JSON.stringify(workout.category.replace(" ", "")))
          );
       }
 
