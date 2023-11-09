@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <link rel="icon" type="images/png" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/templates/darebee/css/style12.css" type="text/css" media="screen" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8">
+	<meta name="rights" content="DAREBEE">
+	<meta name="author" content="DAREBEE">
+	<meta name="description" content="DAREBEE, darebee, fitness, workouts, visual workouts, fitness challenges, fitness motivation, exercise tips, fitness guides, fitness community">
+	<meta name="generator" content="Joomla! - Open Source Content Management">
+	<title>DAREBEE - 404</title>
+
+	<link href="/media/vendor/joomla-custom-elements/css/joomla-alert.min.css?0.2.0" rel="stylesheet" />
+	<link href="https://darebee.com//modules/mod_myshortlist/assets/style.min.css" rel="stylesheet" />
+
+	<script src="/media/vendor/jquery/js/jquery.min.js?3.7.1"></script>
+	<script src="/media/legacy/js/jquery-noconflict.min.js?04499b98c0305b16b373dff09fe79d1290976288"></script>
+	<script src="/media/mod_menu/js/menu-es5.min.js?f9b9fd4a3908cd033b59c964e35a10d6" nomodule defer></script>
+	<script type="application/json" class="joomla-script-options new">{"joomla.jtext":{"ERROR":"Error","MESSAGE":"Message","NOTICE":"Notice","WARNING":"Warning","JCLOSE":"Close","JOK":"OK","JOPEN":"Open"},"system.paths":{"root":"","rootFull":"https:\/\/darebee.com\/","base":"","baseFull":"https:\/\/darebee.com\/"},"csrf.token":"b8157a7275866ace5674a810e257bff5","myshortlist":{"plugin_enabled":1}}</script>
+	<script src="/media/system/js/core.min.js?9c761ae035a6bd778a710e6c0f5ff7de049b67a3"></script>
+	<script src="/media/system/js/messages-es5.min.js?44e3f60beada646706be6569e75b36f7cf293bf9" nomodule defer></script>
+	<script src="/media/system/js/messages.min.js?7425e8d1cb9e4f061d5e30271d6d99b085344117" type="module"></script>
+	<script src="https://darebee.com//modules/mod_myshortlist/assets/script.min.js"></script>
+    
+
+
+    
+    
+    
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X6WVDD795R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X6WVDD795R');
+</script>
+
+    
+    
+    
+    
+</head>
+<body class="site com_content view-article no-layout no-task itemid-378">
+
+
+<div class="body">
+    
+		<div class="wrapper">
+            
+         <div class="header">
+             
+          <div class="mobilemenu"></div>
+             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+             <label for="openSidebarMenu" class="sidebarIconToggle">
+             <div class="spinner diagonal part-1"></div>
+             <div class="spinner horizontal"></div>
+             <div class="spinner diagonal part-2"></div>
+             </label>
+           <div id="sidebarMenu">
+           <ul class="sidebarMenuInner">
+                  <li><a href="/workouts.html">workouts</a></li>
+                  <li><a href="/programs.html" >programs</a></li>
+                  <li><a href="/challenges.html">challenges</a></li>
+                  <li><a href="/fitness.html">guides</a></li>
+                  <li><a href="/collections.html">collections</a></li>
+                  <li><a href="https://www.community.darebee.com/">community</a></li>
+                  <li><a href="/bookmarks.html">my bookmarks</a></li>
+                  <li><a href="/support.html">support</a></li>
+                  
+            </ul>
+           </div> 
+             
+             
+           <div class="logo"><a href="/"><img src="/../images/darebee.png" alt="DAREBEE" title="DAREBEE" /></a></div>
+
+
+
+		     <div class="topmenu">
+                  <ul>
+                  <li><a href="/workouts.html">workouts</a></li>
+                  <li><a href="/programs.html" >programs</a></li>
+                  <li><a href="/challenges.html">challenges</a></li>
+                  <li><a href="/fitness.html">guides</a></li>
+                  <li><a href="/collections.html">collections</a></li>
+                  <li><a href="https://www.community.darebee.com/">community</a></li>
+                  <li class="last"><a href="/bookmarks.html">my bookmarks</a></li>
+                  <li class="donate"><a href="/support.html">support</a></li>
+                  </ul>
+              </div>
+              
+          </div>
+         </div>
+         
+              
+         
+         
+         <div class="wrapper">
+         <div class="homepage">
+         <div id="exercise"></div>
+         <div id="wod"></div>
+         <div id="challenge"></div>
+         <div id="promo"></div>
+         <div id="community"></div>
+         </div>   
+         </div>
+    
+             
+    
+        <div class="wrapper"><div class="top"></div></div> 
+    
+    
+        
+    	<div class="wrapper"> 
+        <div class="main">
+        <div id="system-message-container" aria-live="polite"></div>
+
+        <main><div class="com-content-article item-page" itemscope itemtype="https://schema.org/Article">
+    <meta itemprop="inLanguage" content="en-GB">
+    
+    
+        
+        
+    
+    
+        
+                                                <div itemprop="articleBody" class="com-content-article__body">
+        <div class="404">
+<h1 style="text-align: center;">Page Not Found.</h1>
+<h3 style="text-align: center;">It appears you are not in Kansas any more, Dorothy.<br /><br /></h3>
+<p style="text-align: center;">...here is a kitten for the inconvenience:</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/content/kittens/error.jpg" alt="Here is a kitten" /></p>
+</div>     </div>
+
+        
+                                        </div></main><div class="bookmarks"></div>
+        
+        </div>
+		
+        </div>   
+    
+    
+
+    
+        
+       
+        <div class="wrapper"><div class="bottom"><div class="moduletable support">
+        
+<div id="mod-custom224" class="mod-custom custom">
+    <p><a href="/support.html" title="How Does DAREBEE Work" target="_self"><img title="How Does DAREBEE Work" src="/images/promo/verylow.gif" alt="How Does DAREBEE Work" /></a></p>
+<hr />
+<p>Funding Level</p>
+<p class="funding p24">24%</p>
+<p><a href="/funding.html">What Does This Mean?</a></p></div>
+</div>
+<div class="moduletable started">
+            <h3 >Get Started</h3>        
+<div id="mod-custom270" class="mod-custom custom">
+    <p>New to DAREBEE? Start here:</p>
+<ul>
+<li><a href="/get-started.html" rel="alternate">Introduction</a></li>
+<li><a href="/manual.html" rel="alternate">Workout Manual</a></li>
+<li><a href="/warmup-and-stretching.html" rel="alternate">Warmup &amp; Stretching</a></li>
+<li><a href="/pick-a-program.html" rel="alternate">How to Pick a Program</a></li>
+<li><a href="/training-plans.html" rel="alternate">Training Plans</a></li>
+<li><a href="/modifications.html" rel="alternate">Exercise Alternatives</a></li>
+<li><a href="/functionality.html" rel="alternate">Website Functionality</a></li>
+<li><a href="/video.html" rel="alternate">Video Exercise Library</a></li>
+<li><a href="https://www.community.darebee.com/forums/help-desk-ask-a-question.4/" rel="alternate">Help / Ask a Question</a></li>
+</ul></div>
+</div>
+<div class="moduletable bottom">
+            <h3 >Cool & Useful</h3>        <ul class="mod-menu mod-list nav ">
+<li class="nav-item item-330"><a href="/paperbacks.html" >downloads &amp; paperbacks</a></li><li class="nav-item item-149"><a href="/posters.html" >cool posters</a></li><li class="nav-item item-384"><a href="/printables.html" >cool printables</a></li><li class="nav-item item-341"><a href="/apps.html" >mobile apps</a></li><li class="nav-item item-357"><a href="/certificates.html" >certificates &amp; badges</a></li><li class="nav-item item-143"><a href="/calories-burned.html" >calories burned calculator</a></li><li class="nav-item item-343"><a href="/timer.html" >universal timer</a></li><li class="nav-item item-488"><a href="/print-a-t-shirt.html" >print a t-shirt</a></li><li class="nav-item item-183"><a href="/site-search.html" >site search</a></li></ul>
+</div>
+<div class="moduletable bottom">
+            <h3 >the Project</h3>        <ul class="mod-menu mod-list nav ">
+<li class="nav-item item-150"><a href="/about.html" >about the project</a></li><li class="nav-item item-285"><a href="/how-we-are-supported.html" >how we are supported &amp; why</a></li><li class="nav-item item-407"><a href="/no-ads.html" >why we have no ads</a></li><li class="nav-item item-534"><a href="/team.html" >team behind the project</a></li><li class="nav-item item-396"><a href="/quality.html" >the internet of tomorrow</a></li><li class="nav-item item-352"><a href="/initiatives.html" >initiatives &amp; collaborations</a></li><li class="nav-item item-346"><a href="/faq.html" >popular questions / answered</a></li><li class="nav-item item-126"><a href="/terms-of-use.html" >copyright &amp; terms of use</a></li><li class="nav-item item-120"><a href="/support.html" >support the project</a></li></ul>
+</div>
+</div></div> 
+        
+
+    
+         
+         <div class="wrapper">
+             
+
+             
+             
+                
+         <br />
+             
+         <div class="social">
+         <ul>
+         <li><a href="https://instagram.com/darebeecom" target="_blank"><img src="/../images/socials/insta.png" alt="instagram @darebeecom"/></a></li>
+         <li><a href="https://www.facebook.com/darebees" target="_blank"><img src="/../images/socials/facebook.png" alt="Facebook"/></a></li>
+         <li><a href="https://www.youtube.com/c/Darebees/videos" target="_blank" rel="alternate"><img src="/../images/socials/youtube.png" alt="youtube"/></a></li>
+         <li><a href="https://www.pinterest.com/darebees" target="_blank"><img src="/../images/socials/pinterest.png" alt="pinterest"/></a></li>
+        
+         </ul>
+         </div>
+         
+        
+         <div class="footer">
+         
+         <ul class="mod-menu mod-list nav ">
+<li class="nav-item item-454"><a href="/contact.html" >contact the team</a></li></ul>
+
+             
+         <div class="users">
+         
+         </div> 
+
+            
+         <div class="copyright">
+         DAREBEE is a non-profit free, ad-free and product placement free global fitness resource. DAREBEE is supported exclusively via <a href="/support.html">user donations</a>.
+         <br />
+         <br />
+         &copy; 2012 - 2023 DAREBEE | All Rights Reserved. This website uses Cookies. <a href="/disclaimer.html" rel="alternate">Disclaimer</a> &amp; <a href="/privacy">Privacy Policy</a>. All of the materials on this website are unique, copyrighted and are exclusive to darebee.com. 
+         </div>  
+             
+         </div>
+             
+             
+         <div class="footer">
+         In other languages: 
+         <a href="https://darebee.fr/" target="_blank">French</a> | 
+         <a href="https://darebee.gr/" target="_blank">Greek</a> | 
+         <a href="https://darebee.net/" target="_blank">Russian</a>
+         <br />
+         <br />
+         </div>  
+             
+         </div> 
+      
+
+     	   
+</div>
+
+</body>
+</html>

@@ -227,6 +227,66 @@ const routineUrls: ApiUrlProps[] = [
    },
 ];
 
+const posterUrls: ApiUrlProps[] = [
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/poster",
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the posters which match the assigned filters.\n# SearchParams\n
+      - **page**: For page number\n
+      - **limit**: For number of workout posters inside a page\n
+      - **type**: For different types of posters (choose from 
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["strength", "cardio", "Hiit", "combat", "stretching", "yoga", "wellness"]
+         )\n
+      - **focus**: For focus of the poster (choose from 
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["fullbody", "upperbody", "lowerbody", "abs"]
+         )\n
+      - **difficulty**: For workouts with different difficulties(choose from 
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["light", "easy", "normal", "hard", "advanced"]
+         )\n
+      - **search**: For implementing search functionality in the app.`,
+      type: "search-param",
+      parameters: [
+         {
+            name: "page",
+            type: "number",
+            default: 0,
+            placeholder: "eg. 0",
+         },
+         {
+            name: "limit",
+            type: "number",
+            default: 10,
+            placeholder: "eg. 10",
+         },
+         {
+            name: "type",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. Strength",
+         },
+         {
+            name: "focus",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. Fullbody",
+         },
+         {
+            name: "difficulty",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. normal",
+         },
+         {
+            name: "search",
+            type: "text",
+            default: undefined,
+            placeholder: "",
+         },
+      ],
+   },
+];
+
 const routineCategoryUrls: ApiUrlProps[] = [
    {
       title: "GET",
@@ -322,6 +382,21 @@ const DocsPage = () => {
             description="API calls for retrieving the list of routine-categories from the database"
          />
          {routineCategoryUrls.map((api) => (
+            <ApiUrl
+               key={api.url}
+               title={api.title}
+               variant={api.variant}
+               url={api.url}
+               description={api.description}
+               type={api.type}
+               parameters={api.parameters}
+            />
+         ))}
+         <Heading
+            title="Posters"
+            description="API calls for retrieving the list of all Posters from the database"
+         />
+         {posterUrls.map((api) => (
             <ApiUrl
                key={api.url}
                title={api.title}

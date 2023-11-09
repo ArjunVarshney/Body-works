@@ -50,3 +50,19 @@ export interface RoutineType {
       }[];
    };
 }
+
+export interface PosterType {
+   title: string;
+   type: string;
+   focus: string;
+   infoText: string;
+   difficulty: string;
+   id: string;
+   images: {
+      poster_imageUrl: string;
+      muscles_worked_imageUrl: string;
+      focus_imageUrl: string;
+      type_imageUrl: string;
+      difficulty_imageUrl: string;
+   };
+}
