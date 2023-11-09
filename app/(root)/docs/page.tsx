@@ -214,7 +214,7 @@ const routineUrls: ApiUrlProps[] = [
       title: "GET",
       variant: "public",
       url: "/api/routine/<routineId>",
-      description: `#Description\nMaking a **GET** request on this link will return an exercise which corresponds to the id.\n# Params\n- **routineId**: For a specific exercise with this`,
+      description: `#Description\nMaking a **GET** request on this link will return an routine which corresponds to the id.\n# Params\n- **routineId**: For a specific routine with this`,
       type: "route",
       parameters: [
          {
@@ -282,6 +282,21 @@ const posterUrls: ApiUrlProps[] = [
             type: "text",
             default: undefined,
             placeholder: "",
+         },
+      ],
+   },
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/poster/<posterId>",
+      description: `#Description\nMaking a **GET** request on this link will return an poster which corresponds to the id.\n# Params\n- **posterId**: For a specific poster with this`,
+      type: "route",
+      parameters: [
+         {
+            name: "posterId",
+            type: "text",
+            default: undefined,
+            placeholder: "eg. mean-abs-workout",
          },
       ],
    },

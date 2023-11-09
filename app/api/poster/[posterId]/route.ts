@@ -1,4 +1,4 @@
-import data from "@/data/routine-data.json";
+import data from "@/data/poster-data.json";
 import { PosterType } from "@/types";
 import { NextResponse } from "next/server";
 
