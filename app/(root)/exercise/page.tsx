@@ -1,48 +1,84 @@
 "use client";
 
 import Exercises from "@/components/exercise/exercises";
-import { ExType } from "@/types";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import SectionHeading from "@/components/ui/section-heading";
 import axios from "axios";
+import { Search } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import queryString from "query-string";
 import { useEffect, useState } from "react";
 
 const ExercisePage = () => {
-   const router = useRouter();
    const searchParams = useSearchParams();
+   const [exercises, setExercises] = useState([]);
 
-   const [data, setData] = useState<{
-      totalExercises: number;
-      numberOfPages: number;
-      data: ExType[];
-   }>({
-      totalExercises: 0,
-      numberOfPages: 0,
-      data: [],
-   });
+   const router = useRouter();
 
-   async function fetchData(options: any) {
+   const fetchData = async (url: string) => {
+      try {
+         const data = (await axios.get(url)).data;
+         setExercises(data.data);
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
+   const handleSubmit = (e: any) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const searchString = JSON.stringify(formData.get("search"));
+
       const url = queryString.stringifyUrl({
-         url: "/api/exercises",
-         query: options,
+         url: "/exercise",
+         query: {
+            search: searchString,
+         },
       });
-      const data = await axios.get(url);
-      console.log(url);
-      setData(data.data);
-   }
+
+      const fetchUrl = queryString.stringifyUrl({
+         url: "/api/exercises",
+         query: {
+            search: searchString,
+         },
+      });
+
+      router.push(url);
+      fetchData(fetchUrl);
+   };
 
    useEffect(() => {
-      fetchData({
-         page: searchParams.get("page") || undefined,
-         equipment: searchParams.get("equipment") || undefined,
-         bodypart: searchParams.get("bodypart") || undefined,
-         targetmuscle: searchParams.get("targetmuscle") || undefined,
+      const url = queryString.stringifyUrl({
+         url: "/api/exercises",
+         query: {
+            search: searchParams.get("search"),
+         },
       });
-   }, []);
+
+      fetchData(url);
+   }, [searchParams]);
 
    return (
       <div className="container">
-         <Exercises limit={10} />
+         <div className="container">
+            <SectionHeading title="Search For Exercises" />
+            <form
+               className="p-2 md:p-4 flex items-center gap-2 border shadow-sm rounded-lg bg-muted"
+               onSubmit={handleSubmit}
+            >
+               <Input
+                  type="text"
+                  placeholder="Search"
+                  name="search"
+                  className="text-xl py-6"
+               />
+               <Button type="submit" variant={"ghost"}>
+                  <Search />
+               </Button>
+            </form>
+         </div>
+         <Exercises exercises={exercises} />
       </div>
    );
 };

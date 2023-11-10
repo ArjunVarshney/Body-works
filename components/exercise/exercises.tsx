@@ -1,29 +1,53 @@
 "use client";
+
 import ExerciseCard from "./exercise-card";
 import { Loader2 } from "lucide-react";
 import queryString from "query-string";
-import { useRequest } from "@/hooks/use-request";
 import { ExType } from "@/types";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 interface ExerciseProps {
    limit?: number;
    page?: number;
    targetMuscle?: string;
+   exercises?: ExType[];
 }
 
-const Exercises = ({ limit = 10, page = 1, targetMuscle }: ExerciseProps) => {
-   const url = queryString.stringifyUrl({
-      url: "/api/exercises",
-      query: { limit, page, targetMuscle },
-   });
+const Exercises = ({
+   limit = 10,
+   page = 1,
+   targetMuscle,
+   exercises,
+}: ExerciseProps) => {
+   const [data, setData] = useState<ExType[]>([]);
 
-   const exercises = useRequest(url).data;
+   const fetchData = async (url: string) => {
+      try {
+         if (!exercises) {
+            const data = (await axios.get(url)).data;
+            setData(data.data);
+         } else {
+            setData(exercises);
+         }
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
+   useEffect(() => {
+      const url = queryString.stringifyUrl({
+         url: "/api/exercises",
+         query: { limit, page, targetMuscle },
+      });
+      fetchData(url);
+   }, [exercises]);
 
    return (
       <>
-         {exercises ? (
+         {data ? (
             <div className="container grid grid-cols-[repeat(1,minmax(200px,500px))] sm:grid-cols-[repeat(2,minmax(200px,450px))] lg:grid-cols-[repeat(3,minmax(200px,450px))] gap-10">
-               {exercises.map((ex: ExType) => (
+               {data.map((ex: ExType) => (
                   <ExerciseCard key={ex.id} ex={ex} />
                ))}
             </div>

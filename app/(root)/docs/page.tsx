@@ -63,7 +63,7 @@ const exerciseUrls: ApiUrlProps[] = [
             placeholder: "eg. waist",
          },
          {
-            name: "targetmuscle",
+            name: "targetMuscle",
             type: "text",
             default: undefined,
             placeholder: "eg. abs",

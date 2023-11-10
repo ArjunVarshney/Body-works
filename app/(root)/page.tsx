@@ -18,10 +18,29 @@ import {
    Loader2,
    Search,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import queryString from "query-string";
 import { Fragment } from "react";
 
 const HomePage = () => {
    const muscles = useRequest("/api/targetmuscles").data;
+   const router = useRouter();
+
+   const handleSubmit = (e: any) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const searchString = JSON.stringify(formData.get("search"));
+
+      const url = queryString.stringifyUrl({
+         url: "/exercise",
+         query: {
+            search: searchString,
+         },
+      });
+
+      router.push(url);
+   };
+
    return (
       <>
          <div className="max-w-3xl lg:max-w-none xl:max-w-[1400px] mx-auto w-full min-h-full xl:min-h-0 items-center justify-center flex flex-col xl:flex-row relative xl:items-stretch xl:bg-foreground dark:bg-background rounded-3xl px-5 sm:px-10 xl:px-0 border-4 border-t-0 border-b-0 border-background">
@@ -70,16 +89,22 @@ const HomePage = () => {
          </div>
          <div className="container">
             <SectionHeading title="Search For Exercises" />
-            <form className="p-2 md:p-4 flex items-center gap-2 border shadow-sm rounded-lg bg-muted">
-               <Input
-                  type="text"
-                  placeholder="Search"
-                  className="text-xl py-6"
-               />
-               <Button type="submit" variant={"ghost"}>
-                  <Search />
-               </Button>
-            </form>
+            <div className="container !pt-0">
+               <form
+                  className="p-2 md:p-4 flex items-center gap-2 border shadow-sm rounded-lg bg-muted"
+                  onSubmit={handleSubmit}
+               >
+                  <Input
+                     type="text"
+                     placeholder="Search"
+                     name="search"
+                     className="text-xl py-6"
+                  />
+                  <Button type="submit" variant={"ghost"}>
+                     <Search />
+                  </Button>
+               </form>
+            </div>
             <div className="container">
                <Heading
                   title="Body Parts"
