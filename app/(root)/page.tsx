@@ -29,7 +29,7 @@ const HomePage = () => {
    const handleSubmit = (e: any) => {
       e.preventDefault();
       const formData = new FormData(e.target);
-      const searchString = JSON.stringify(formData.get("search"));
+      const searchString = String(formData.get("search"));
 
       const url = queryString.stringifyUrl({
          url: "/exercise",

@@ -1,9 +1,11 @@
 "use client";
 
+import ExerciseFilter from "@/components/exercise-filter";
 import Exercises from "@/components/exercise/exercises";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SectionHeading from "@/components/ui/section-heading";
+import { Separator } from "@/components/ui/separator";
 import axios from "axios";
 import { Search } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -28,19 +30,19 @@ const ExercisePage = () => {
    const handleSubmit = (e: any) => {
       e.preventDefault();
       const formData = new FormData(e.target);
-      const searchString = JSON.stringify(formData.get("search"));
+      const searchString = String(formData.get("search"));
 
       const url = queryString.stringifyUrl({
          url: "/exercise",
          query: {
-            search: searchString,
+            search: searchString === "" ? undefined : searchString,
          },
       });
 
       const fetchUrl = queryString.stringifyUrl({
          url: "/api/exercises",
          query: {
-            search: searchString,
+            search: searchString === "" ? undefined : searchString,
          },
       });
 
@@ -49,10 +51,11 @@ const ExercisePage = () => {
    };
 
    useEffect(() => {
+      const searchString = searchParams.get("search");
       const url = queryString.stringifyUrl({
          url: "/api/exercises",
          query: {
-            search: searchParams.get("search"),
+            search: searchString === "" ? undefined : searchString,
          },
       });
 
@@ -60,9 +63,9 @@ const ExercisePage = () => {
    }, [searchParams]);
 
    return (
-      <div className="container">
-         <div className="container">
-            <SectionHeading title="Search For Exercises" />
+      <div className="container !pt-0">
+         <SectionHeading title="Search For Exercises" />
+         <div className="container !py-0">
             <form
                className="p-2 md:p-4 flex items-center gap-2 border shadow-sm rounded-lg bg-muted"
                onSubmit={handleSubmit}
@@ -72,12 +75,15 @@ const ExercisePage = () => {
                   placeholder="Search"
                   name="search"
                   className="text-xl py-6"
+                  defaultValue={searchParams.get("search") || ""}
                />
                <Button type="submit" variant={"ghost"}>
                   <Search />
                </Button>
             </form>
          </div>
+         <ExerciseFilter />
+         <Separator />
          <Exercises exercises={exercises} />
       </div>
    );
