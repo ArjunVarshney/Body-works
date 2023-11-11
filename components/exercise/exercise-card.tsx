@@ -8,10 +8,17 @@ import {
 } from "@/components/ui/card";
 import { ExType } from "@/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ExerciseCard = ({ ex }: { ex: ExType }) => {
+   const router = useRouter();
    return (
-      <Card className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in">
+      <Card
+         onClick={() => {
+            router.push("/exercise/" + ex.id);
+         }}
+         className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in"
+      >
          <CardHeader>
             <CardTitle className="font-extrabold mb-2 text-light-blue text-3xl">
                {ex.title}

@@ -9,6 +9,27 @@ body,
    scroll-behavior: smooth;
 }
 
+.markdown-content {
+   @apply text-lg;
+}
+.markdown-content ul {
+   @apply text-lg !list-disc pl-7 flex flex-col gap-1;
+}
+.markdown-content ol {
+   @apply text-lg !list-disc pl-7 flex flex-col gap-1;
+}
+
+.markdown-content h1 {
+   @apply text-2xl font-extrabold pt-2 pb-1;
+}
+.markdown-content h2 {
+   @apply text-xl font-bold py-2 underline;
+}
+
+.markdown-content {
+   @apply pl-2;
+}
+
 .container {
    @apply max-w-3xl lg:max-w-none xl:max-w-[1400px] mx-auto p-4 pt-6;
 }
