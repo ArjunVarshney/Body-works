@@ -122,7 +122,7 @@ const ExercisePage = ({ params }: { params: { exerciseId: string } }) => {
                   <div className="flex flex-wrap gap-2">
                      {exercise.keywords &&
                         exercise.keywords.map((keyword: string) => (
-                           <Badge className="text-sm lg:text-md">
+                           <Badge className="text-sm lg:text-md" key={keyword}>
                               {keyword}
                            </Badge>
                         ))}
@@ -164,6 +164,7 @@ const ExercisePage = ({ params }: { params: { exerciseId: string } }) => {
                   {exercise.images &&
                      exercise.images.map((image: string) => (
                         <Image
+                           key={image}
                            height={300}
                            width={300}
                            src={image}
@@ -191,6 +192,7 @@ const ExercisePage = ({ params }: { params: { exerciseId: string } }) => {
                   {exercise.videos &&
                      exercise.videos.map((video: string) => (
                         <ReactPlayer
+                           key={video}
                            url={video}
                            width={"220px"}
                            height={""}
@@ -198,6 +200,7 @@ const ExercisePage = ({ params }: { params: { exerciseId: string } }) => {
                               aspectRatio: "16 / 9",
                               border: "1px solid hsl(var(--border))",
                               borderRadius: "var(--radius)",
+                              overflow: "hidden",
                            }}
                            controls={true}
                            light={true}
