@@ -11,7 +11,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
 }) => {
    return (
       <div className={cn("px-4 py-10 animate-enter duration-300", className)}>
-         <h2 className="text-5xl md:text-7xl font-bold tracking-tight pb-4 inline underline">
+         <h2 className="text-5xl md:text-7xl font-bold tracking-tight pb-4 inline underline capitalize">
             {title}
          </h2>
       </div>
