@@ -3,17 +3,19 @@
 import BodyParts from "@/components/exercise/body-parts";
 import Equipments from "@/components/exercise/equipments";
 import TargetMuscles from "@/components/exercise/target-muscles";
-import { Button } from "@/components/ui/button";
+import RoutineCategories from "@/components/routines/routine-categories";
 import Heading from "@/components/ui/heading";
-import { Input } from "@/components/ui/input";
 import SectionHeading from "@/components/ui/section-heading";
-import { Search } from "lucide-react";
 
 const CategoryPage = () => {
    return (
       <div className="xl:border-t container">
-         <SectionHeading title="Categories" />
+         <SectionHeading title="Routine Categories" />
+         <div className="container !pt-0" id="routine-categories">
+            <RoutineCategories />
+         </div>
 
+         <SectionHeading title="Exercise Categories" />
          <div className="container !pt-2" id="target-muscles">
             <Heading
                title="Target Muscles"

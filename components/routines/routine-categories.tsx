@@ -34,7 +34,7 @@ const RoutineCategories = ({
             <div className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in">
                <Button
                   className="w-full h-full rounded flex flex-col items-center justify-center gap-2 font-bold"
-                  onClick={() => router.push("/routines")}
+                  onClick={() => router.push("/categories#routine-categories")}
                >
                   <PlusCircle className="h-10 w-10 opacity-70" />
                   View More

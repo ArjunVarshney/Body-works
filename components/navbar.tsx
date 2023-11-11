@@ -19,6 +19,11 @@ const Navbar = () => {
          active: pathname === "/categories",
       },
       {
+         href: "/exercise",
+         label: "Exercises",
+         active: pathname === "/exercise",
+      },
+      {
          href: "/routines",
          label: "Workouts",
          active: pathname === "/routines",

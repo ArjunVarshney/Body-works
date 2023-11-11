@@ -1,7 +1,6 @@
 "use client";
 
 import RoutineCategories from "@/components/routines/routine-categories";
-import Heading from "@/components/ui/heading";
 import SectionHeading from "@/components/ui/section-heading";
 
 const Routines = () => {

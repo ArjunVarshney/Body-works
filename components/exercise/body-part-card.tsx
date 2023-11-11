@@ -2,9 +2,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BodyPartType } from "@/types";
 import Image from "next/image";
 
-const BodyPartsCard = ({ target }: { target: BodyPartType }) => {
+const BodyPartsCard = ({
+   target,
+   onClick,
+}: {
+   target: BodyPartType;
+   onClick?: () => void;
+}) => {
    return (
-      <Card className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in">
+      <Card onClick={onClick} className="group hover:scale-[97%] hover:shadow-inner active:scale-100 transition animate-pop-in">
          <CardHeader className="px-1.5 !pt-1.5 !pb-1 md:p-3">
             <CardTitle className="font-extrabold text-light-blue text-sm md:text-lg capitalize w-full truncate">
                {target.bodyPart}

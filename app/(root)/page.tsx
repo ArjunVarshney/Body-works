@@ -134,7 +134,7 @@ const HomePage = () => {
                   title="Routine Categories"
                   description="Filter on the basis of various categories"
                />
-               <RoutineCategories n={8} viewMoreBtn={true} />
+               <RoutineCategories n={5} viewMoreBtn={true} />
             </div>
             <div className="container !py-10 mt-10 w-full flex items-center justify-center bg-primary-foreground rounded border shadow">
                <Button
@@ -165,7 +165,7 @@ const HomePage = () => {
                </div>
             )}
             <div className="flex w-full justify-center mt-10">
-               <Button variant={"outline"}>Load More</Button>
+               <Button variant={"outline"} onClick={()=>router.push("/exercise")}>Load More</Button>
             </div>
          </div>
       </>
