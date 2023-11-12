@@ -1,6 +1,6 @@
 "use client";
 
-import ExerciseFilter from "@/components/exercise-filter";
+import ExerciseFilter from "@/components/exercise/exercise-filter";
 import Exercises from "@/components/exercise/exercises";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

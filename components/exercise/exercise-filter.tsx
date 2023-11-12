@@ -10,12 +10,12 @@ import {
    PopoverContent,
    PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "./ui/button";
-import Equipments from "./exercise/equipments";
-import BodyParts from "./exercise/body-parts";
-import TargetMuscles from "./exercise/target-muscles";
-import { ScrollArea } from "./ui/scroll-area";
-import Heading from "./ui/heading";
+import { Button } from "../ui/button";
+import Equipments from "./equipments";
+import BodyParts from "./body-parts";
+import TargetMuscles from "./target-muscles";
+import { ScrollArea } from "../ui/scroll-area";
+import Heading from "../ui/heading";
 import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";

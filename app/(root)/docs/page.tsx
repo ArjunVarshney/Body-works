@@ -147,10 +147,17 @@ const routineUrls: ApiUrlProps[] = [
       title: "GET",
       variant: "public",
       url: "/api/routine",
-      description: `#Description\nMaking a **GET** request on this link will return an array of all the routines which match the assigned filters.\n# SearchParams\n- **page**: For page number\n - **limit**: For number of workout routines inside a page\n - **equipment**: For workout routines  performed using a specific equipment\n- **category**: For workout routines in a category, you can call the categories api for all the bodyparts\n- **gender**: For workout routines of a specific gender\n
+      description: `#Description\nMaking a **GET** request on this link will return an array of all the routines which match the assigned filters.\n# SearchParams\n
+      - **page**: For page number\n
+      - **limit**: For number of workout routines inside a page\n
+      - **equipment**: For workout routines  performed using a specific equipment\n
+      - **category**: For workout routines in a category, you can call the categories api for all the bodyparts\n
+      - **gender**: For workout routines of a specific gender\n
       - **duration**: For workout routines with specific duration (eg:- 4 weeks)
       - **level**: For workout routines for people of different levels (eg:- beginner, intermediate)
-      - **days_per_week** - For workout routines with specific days per week
+      - **days&lowbar;per&lowbar;week** - For workout routines with specific days per week
+      - **main&lowbar;goal** - For workout routines with a specific main goal.
+      - **workout&lowbar;type** - For workout routines with a specific type
       - **search**: For implementing search functionality in the app.`,
       type: "search-param",
       parameters: [
@@ -170,13 +177,13 @@ const routineUrls: ApiUrlProps[] = [
             name: "equipment",
             type: "text",
             default: undefined,
-            placeholder: "eg. kettlebell",
+            placeholder: "eg. barbell",
          },
          {
-            name: "bodypart",
+            name: "category",
             type: "text",
             default: undefined,
-            placeholder: "eg. waist",
+            placeholder: "eg. cardio",
          },
          {
             name: "gender",
@@ -203,6 +210,18 @@ const routineUrls: ApiUrlProps[] = [
             placeholder: "eg. 4",
          },
          {
+            name: "main_goal",
+            type: "number",
+            default: undefined,
+            placeholder: "eg. Lose Fat",
+         },
+         {
+            name: "workout_type",
+            type: "number",
+            default: undefined,
+            placeholder: "eg. split",
+         },
+         {
             name: "search",
             type: "text",
             default: undefined,
@@ -224,6 +243,15 @@ const routineUrls: ApiUrlProps[] = [
             placeholder: "eg. 46",
          },
       ],
+   },
+];
+
+const routineFilterUrls: ApiUrlProps[] = [
+   {
+      title: "GET",
+      variant: "public",
+      url: "/api/routine/filter",
+      description: `#Description\nMaking a **GET** request on this link will return an object of all the routine fitlers that may be used to filter the data from the routines api.`,
    },
 ];
 
@@ -299,18 +327,6 @@ const posterUrls: ApiUrlProps[] = [
             placeholder: "eg. mean-abs-workout",
          },
       ],
-   },
-];
-
-const routineCategoryUrls: ApiUrlProps[] = [
-   {
-      title: "GET",
-      variant: "public",
-      url: "/api/routine/category",
-      description: `#Description\nMaking a **GET** request on this link will return an array of all the routine categories that may be used to filter the data from the routines api.\n#Response Type\n
-    **Array of objects** containing the following entries:
-    - **title**: string
-    - **imageUrl**: string`,
    },
 ];
 
@@ -393,10 +409,10 @@ const DocsPage = () => {
             />
          ))}
          <Heading
-            title="Routine-Categories"
+            title="Routine-Filters"
             description="API calls for retrieving the list of routine-categories from the database"
          />
-         {routineCategoryUrls.map((api) => (
+         {routineFilterUrls.map((api) => (
             <ApiUrl
                key={api.url}
                title={api.title}

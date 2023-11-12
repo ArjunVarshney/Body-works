@@ -5828,6 +5828,7 @@
             "Workout Type": "Split",
             "Training Level": "Beginner",
             "Program Duration": "8 weeks",
+            "Days Per Week": "7",
             "Time Per Workout": "15 minutes",
             "Equipment Required": "Bands, Barbell, Bodyweight, Foam Roll, Kettle Bells, Other",
             "Target Gender": "Male & Female"
@@ -17822,17 +17823,6 @@
          ]
       },
       "id": 728
-   },
-   {
-      "category": ["At Home"],
-      "routine": {
-         "routine_title": "4 Day Upper/Lower Bodyweight Split Workout",
-         "routine_description": "You don’t need a gym to get stronger, just a burning desire to improve. This versatile, no-nonsense upper/lower body workout will show you how to use household items for a serious workout.",
-         "routine_imageUrl": "/routine-category/category/athome.jpg",
-         "workout_summary": {},
-         "workout_plan": []
-      },
-      "id": 740
    },
    {
       "category": ["Celebrity"],

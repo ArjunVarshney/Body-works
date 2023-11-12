@@ -19,15 +19,17 @@ export async function GET(req: Request, res: Response) {
       const duration = searchParams.get("duration");
       const trainingLevel = searchParams.get("level");
       const daysPerWeek = searchParams.get("days_per_week");
+      const mainGoal = searchParams.get("main_goal");
+      const workoutType = searchParams.get("workout_type");
 
       const start = page * limit;
       const end = start + limit;
 
       if (category) {
-         const regex = new RegExp(category.replace(" ", ""), "i");
+         const regex = new RegExp(category, "i");
 
          searchedData = searchedData.filter((workout) =>
-            regex.test(JSON.stringify(workout.category.replace(" ", "")))
+            workout.category.some((category) => regex.test(category))
          );
       }
 
@@ -35,7 +37,7 @@ export async function GET(req: Request, res: Response) {
          const regex = new RegExp(equipment, "i");
 
          searchedData = searchedData.filter((workout) =>
-            regex.test(JSON.stringify(workout.routine.workout_summary))
+            regex.test(workout.routine.workout_summary["Equipment Required"])
          );
       }
 
@@ -43,17 +45,15 @@ export async function GET(req: Request, res: Response) {
          const regex = new RegExp(gender, "i");
 
          searchedData = searchedData.filter((workout) =>
-            regex.test(JSON.stringify(workout.routine.workout_summary))
+            regex.test(workout.routine.workout_summary["Target Gender"])
          );
       }
 
       if (duration) {
-         const regex = new RegExp(duration.replace(" ", ""), "i");
+         const regex = new RegExp(duration, "i");
 
          searchedData = searchedData.filter((workout) =>
-            regex.test(
-               JSON.stringify(workout.routine.workout_summary).replace(" ", "")
-            )
+            regex.test(workout.routine.workout_summary["Program Duration"])
          );
       }
 
@@ -62,7 +62,10 @@ export async function GET(req: Request, res: Response) {
 
          searchedData = searchedData.filter((workout) =>
             regex.test(
-               JSON.stringify(workout.routine.workout_summary).replace(" ", "")
+               workout.routine.workout_summary["Training Level"].replace(
+                  " ",
+                  ""
+               )
             )
          );
       }
@@ -72,7 +75,27 @@ export async function GET(req: Request, res: Response) {
 
          searchedData = searchedData.filter((workout) =>
             regex.test(
-               JSON.stringify(workout.routine.workout_summary).replace(" ", "")
+               workout.routine.workout_summary["Days Per Week"].replace(" ", "")
+            )
+         );
+      }
+
+      if (mainGoal) {
+         const regex = new RegExp(String(mainGoal).replace(" ", ""), "i");
+
+         searchedData = searchedData.filter((workout) =>
+            regex.test(
+               workout.routine.workout_summary["Main Goal"].replace(" ", "")
+            )
+         );
+      }
+
+      if (workoutType) {
+         const regex = new RegExp(String(workoutType).replace(" ", ""), "i");
+
+         searchedData = searchedData.filter((workout) =>
+            regex.test(
+               workout.routine.workout_summary["Workout Type"].replace(" ", "")
             )
          );
       }

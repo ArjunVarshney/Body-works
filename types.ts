@@ -37,13 +37,13 @@ export interface RoutineCategoryType {
 }
 
 export interface RoutineType {
-   category: string;
+   category: string[];
    id: number;
    routine: {
       routine_title: string;
       routine_description: string;
       routine_imageUrl: string;
-      workout_summary: object;
+      workout_summary: any;
       workout_plan: {
          heading: string | null;
          day_plan: string;
