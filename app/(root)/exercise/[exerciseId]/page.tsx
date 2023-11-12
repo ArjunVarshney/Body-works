@@ -21,12 +21,6 @@ import TargetMuscleCard from "@/components/exercise/target-muscle-card";
 import EquipmentCard from "@/components/exercise/equipment-card";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// const SkeletonPage = ()=>{
-//    return (
-
-//    );
-// }
-
 const ExercisePage = ({ params }: { params: { exerciseId: string } }) => {
    const router = useRouter();
    const exercise = useRequest("/api/exercises/" + params.exerciseId);

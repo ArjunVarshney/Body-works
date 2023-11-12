@@ -4,7 +4,7 @@ import BodyParts from "@/components/exercise/body-parts";
 import Equipments from "@/components/exercise/equipments";
 import Exercises from "@/components/exercise/exercises";
 import TargetMuscles from "@/components/exercise/target-muscles";
-import RoutineCategories from "@/components/routines/routine-categories";
+import RoutineCategories from "@/components/routines/routine-filter-cards";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
@@ -134,7 +134,12 @@ const HomePage = () => {
                   title="Routine Categories"
                   description="Filter on the basis of various categories"
                />
-               <RoutineCategories n={5} viewMoreBtn={true} />
+               <RoutineCategories
+                  n={5}
+                  viewMoreBtn={true}
+                  data={useRequest("/api/routine/filter").category}
+                  queryKey={"category"}
+               />
             </div>
             <div className="container !py-10 mt-10 w-full flex items-center justify-center bg-primary-foreground rounded border shadow">
                <Button
@@ -165,7 +170,12 @@ const HomePage = () => {
                </div>
             )}
             <div className="flex w-full justify-center mt-10">
-               <Button variant={"outline"} onClick={()=>router.push("/exercise")}>Load More</Button>
+               <Button
+                  variant={"outline"}
+                  onClick={() => router.push("/exercise")}
+               >
+                  Load More
+               </Button>
             </div>
          </div>
       </>
