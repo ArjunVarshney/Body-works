@@ -18,7 +18,18 @@ const ExerciseCard = ({ routine }: { routine: RoutineType }) => {
                <CardTitle className="font-extrabold mb-2 text-light-blue text-3xl">
                   {routine.routine.routine_title}
                </CardTitle>
-               <CardDescription className="text-primary flex gap-1 capitalize">
+               <CardDescription className="text-primary flex flex-col gap-2">
+                  <div className="flex gap-1">
+                     <Badge className="truncate">
+                        {routine.routine.workout_summary["Training Level"]}
+                     </Badge>
+                     <Badge className="truncate">
+                        {routine.routine.workout_summary["Workout Type"]}
+                     </Badge>
+                     <Badge variant={"destructive"} className="truncate">
+                        {routine.routine.workout_summary["Program Duration"]}
+                     </Badge>
+                  </div>
                   {routine.routine.routine_description}
                </CardDescription>
             </CardHeader>

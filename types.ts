@@ -43,7 +43,9 @@ export interface RoutineType {
       routine_title: string;
       routine_description: string;
       routine_imageUrl: string;
-      workout_summary: any;
+      workout_summary: {
+         [key: string]: string;
+      };
       workout_plan: {
          heading: string | null;
          day_plan: string;
