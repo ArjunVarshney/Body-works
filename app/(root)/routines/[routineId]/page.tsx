@@ -10,15 +10,7 @@ import {
    TooltipProvider,
    TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-   Table,
-   TableBody,
-   TableCaption,
-   TableCell,
-   TableHead,
-   TableHeader,
-   TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useRequest } from "@/hooks/use-request";
 import Image from "next/image";
 import { RoutineType } from "@/types";
@@ -26,6 +18,7 @@ import Heading from "@/components/ui/heading";
 import markdown from "@wcj/markdown-to-html";
 import queryString from "query-string";
 import { useRouter } from "next/navigation";
+import { Fragment } from "react";
 
 const RoutineIdPage = ({ params }: { params: { routineId: string } }) => {
    const { category, routine }: RoutineType = useRequest(
@@ -56,7 +49,7 @@ const RoutineIdPage = ({ params }: { params: { routineId: string } }) => {
          ) : (
             <Skeleton className="w-full h-[60px] md:h-[120px] rounded-lb" />
          )}
-         <div className="flex flex-row mt-5">
+         <div className="flex flex-col lg:flex-row mt-5">
             <div className="container flex flex-wrap gap-2">
                {category && categories ? (
                   <>
@@ -98,8 +91,8 @@ const RoutineIdPage = ({ params }: { params: { routineId: string } }) => {
                         <TableBody>
                            {Object.entries(routine.workout_summary).map(
                               ([key, value]) => (
-                                 <TableRow key={key}>
-                                    <TableCell className="font-semibold border-r">
+                                 <TableRow key={key} className=" min-h-0 h-0">
+                                    <TableCell className="font-semibold border-r px-2 sm:px-4 py-2">
                                        {key}
                                     </TableCell>
                                     <TableCell>{value}</TableCell>
@@ -119,7 +112,7 @@ const RoutineIdPage = ({ params }: { params: { routineId: string } }) => {
                   width={500}
                   src={routine.routine_imageUrl}
                   alt="routine image"
-                  className="w-full lg:max-w-[400px] object-cover aspect-square rounded-lg border my-4 mr-4"
+                  className="w-full lg:max-w-[400px] object-cover aspect-square rounded-lg border my-4 mr-4 scale-[96%] lg:scale-100"
                />
             ) : (
                <Skeleton className="w-full lg:max-w-[400px] aspect-square" />
@@ -144,14 +137,14 @@ const RoutineIdPage = ({ params }: { params: { routineId: string } }) => {
             </div>
          </div>
          <div className="container capitalize flex flex-col gap-5">
-            {/* -------------------------Description---------------------- */}
+            {/* -------------------------Plan---------------------- */}
             <div className="flex flex-col sm:flex-row justify-between gap-5 sm:border sm:p-5 rounded-lg animate-pop-in">
                <div className="flex-1">
                   <Heading title="Workout Plan" />
                   {routine && routine.routine_description ? (
                      <div className="flex flex-col gap-2">
                         {routine.workout_plan.map(({ day_plan, heading }) => (
-                           <>
+                           <Fragment key={heading}>
                               <h3 className="p-2 font-semibold text-2xl underline">
                                  {heading}
                               </h3>
@@ -161,7 +154,7 @@ const RoutineIdPage = ({ params }: { params: { routineId: string } }) => {
                                     __html: markdown(day_plan),
                                  }}
                               ></div>
-                           </>
+                           </Fragment>
                         ))}
                      </div>
                   ) : (
